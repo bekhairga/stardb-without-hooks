@@ -1,2 +1,2 @@
-import ItemDetails from './item-details';
+import ItemDetails from "./item-details-logic";
 export default ItemDetails;
