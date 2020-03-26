@@ -65,21 +65,28 @@ export default class SwapiService {
     };
 
     //gettting list of the elements
-    getAllPeople = async () => {
-        const allPeople = await this.getData(this.people);
+    getAllPeople = async (page = 1) => {
+        const data = await fetch(`${this._apiURL}${this.people}/?page=${page}`);
+        const allPeople = await data.json();
         const results = allPeople.results.map(el => this._transformPerson(el));
         allPeople.results = results;
         return allPeople;
     };
-    getAllPlanets = async () => {
-        const allPlanets = await this.getData(this.planets);
+    getAllPlanets = async page => {
+        const data = await fetch(
+            `${this._apiURL}${this.planets}/?page=${page}`
+        );
+        const allPlanets = await data.json();
         const results = allPlanets.results.map(el => this._transformPlanet(el));
         allPlanets.results = results;
         return allPlanets;
     };
 
-    getAllStarships = async () => {
-        const allStarships = await this.getData(this.starships);
+    getAllStarships = async page => {
+        const data = await fetch(
+            `${this._apiURL}${this.starships}/?page=${page}`
+        );
+        const allStarships = await data.json();
         const results = allStarships.results.map(el =>
             this._transformStarship(el)
         );

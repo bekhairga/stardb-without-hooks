@@ -6,7 +6,8 @@ import ItemDetails from "../item-details";
 const mapPlanetsMethodsToProps = swapi => {
     return {
         getData: swapi.getPlanet,
-        getImage: swapi.getPlanetImg
+        getImage: swapi.getPlanetImg,
+        type: "planet"
     };
 };
 

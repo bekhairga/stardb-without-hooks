@@ -6,7 +6,8 @@ import ItemDetails from "../item-details";
 const mapStarshipMethodsToProps = swapi => {
     return {
         getData: swapi.getStarship,
-        getImage: swapi.getStarshipImg
+        getImage: swapi.getStarshipImg,
+        type: "starship"
     };
 };
 

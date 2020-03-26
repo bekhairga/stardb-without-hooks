@@ -3,7 +3,8 @@
 import React from "react";
 import "./item-list.css";
 import PropType from "prop-types";
-const ItemListView = ({ data, onItemSelected }) => {
+
+const ItemListView = ({ data, onItemSelected, page, changePage, url }) => {
     const items = data.results.map(item => (
         <li
             onClick={() => onItemSelected(item.id)}
@@ -13,11 +14,7 @@ const ItemListView = ({ data, onItemSelected }) => {
             {item.name}
         </li>
     ));
-    return (
-        <div>
-            <ul className="item-list list-group">{items}</ul>
-        </div>
-    );
+    return items;
 };
 ItemListView.defaultProps = {
     data: {},

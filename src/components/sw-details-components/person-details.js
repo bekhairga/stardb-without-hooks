@@ -6,7 +6,8 @@ import ItemDetails from "../item-details";
 const mapPersonMethodsToProps = swapi => {
     return {
         getData: swapi.getPerson,
-        getImage: swapi.getPersonImg
+        getImage: swapi.getPersonImg,
+        type: "character"
     };
 };
 

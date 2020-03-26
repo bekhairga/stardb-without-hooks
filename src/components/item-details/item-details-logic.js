@@ -68,7 +68,7 @@ const ItemDetailsLogic = View => {
         render() {
             const { loading, item, image, error } = this.state;
             if (this.props.itemId === undefined) {
-                return <h3>Please choose a character</h3>;
+                return <h3>Please choose a {this.props.type}</h3>;
             }
             if (loading) {
                 return (
